@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+
+# SQLite 数据文件（测试用 :memory:，不落盘）
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+
+*.log
+.env
+.env.local
+.DS_Store

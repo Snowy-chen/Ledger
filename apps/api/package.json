@@ -1,0 +1,29 @@
+{
+  "name": "@expense/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@expense/shared": "*",
+    "@koa/bodyparser": "^6.1.0",
+    "@koa/router": "^15.7.0",
+    "better-sqlite3": "^13.0.3",
+    "koa": "^3.2.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/koa": "^3.0.3",
+    "@types/node": "^22.19.0",
+    "@types/supertest": "^7.2.1",
+    "supertest": "^7.3.1",
+    "tsx": "^4.23.15",
+    "vitest": "^5.0.3"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "expense-tracker",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build:shared": "npm run build -w @expense/shared",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run build:shared && npm run test --workspaces --if-present",
+    "dev": "npm run build:shared && concurrently -n api,web -c blue,green \"npm run dev -w @expense/api\" \"npm run dev -w @expense/web\"",
+    "dev:api": "npm run build:shared && npm run dev -w @expense/api",
+    "dev:web": "npm run build:shared && npm run dev -w @expense/web"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "typescript": "^5.7.3"
+  }
+}
